@@ -1,0 +1,32 @@
+{
+  "name": "remark-img-src",
+  "version": "1.0.0",
+  "description": "Remark plugin for dynamically updating img src urls",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connaghjacobi/remark-img-src.git"
+  },
+  "author": "Connagh Jacobi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/connaghjacobi/remark-img-src/issues"
+  },
+  "homepage": "https://github.com/connaghjacobi/remark-img-src#readme",
+  "dependencies": {
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "remark": "^15.0.1"
+  },
+  "files": [
+    "src"
+  ]
+}
