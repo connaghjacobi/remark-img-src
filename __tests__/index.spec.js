@@ -14,7 +14,7 @@ describe('remark-link-rewrite', () => {
     expect(output).toMatch(input);
   });
 
-  test('Should replace URL', async () => {
+  test('Should replace URL from string', async () => {
     const input = '![image](http://link.com/image)';
     const output = await run(input, 
       {
@@ -27,5 +27,17 @@ describe('remark-link-rewrite', () => {
       }
     )
     expect(output).toMatch('![image](https://link.com/image)')
+  });
+
+  test('Should replace URL from JSX', async () => {
+    const input = '<img src="http://link.com/image" />';
+    const output = await run(input, 
+      {
+        func: (url) => {
+          return url.replace('link.com', 'test.com');
+        }
+      }
+    )
+    expect(output).toMatch('<img src="http://test.com/image" />')
   });
 });
